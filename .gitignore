@@ -15,6 +15,6 @@ venv/
 *.fdb_latexmk
 *.fls
 
-# Backup and OS files
-*~
-.DS_Store
+# # Backup and OS files
+# *~
+# .DS_Store
