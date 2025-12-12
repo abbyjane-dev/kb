@@ -37,6 +37,7 @@ html_title = 'Abby Jane\'s Knowledge Base'
 html_static_path = ['_static']
 html_css_files = ["style.css"]
 html_favicon = "_static/favicon.png"
+html_show_sourcelink = False
 
 
 html_theme_options = {
