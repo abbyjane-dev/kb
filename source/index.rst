@@ -1,15 +1,19 @@
-Abby Jane’s Knowledge Base
-=========================
+..
+   Abby Jane’s Knowledge Base
+   ==========================
 
-This is my homegrown knowledge base: notes on infrastructure, Ghost,
-certificates, and the things 3 AM Abby refuses to remember.
+This is my homegrown knowledge base. Because I forget things easily.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Sections:
 
-   infra/index
-   ghost/index
-   certs/index
-   linux/index
-   misc/index
+   tech
+   todo
+
+
+..
+   todo::
+   ..
+      Fix wrapping on right toolbar
+      Fix todos

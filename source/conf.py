@@ -16,7 +16,7 @@ release = '1'
 
 extensions = [
         "myst_parser",
-        "alabaster",
+        "sphinx.ext.todo",
 ]
 
 source_suffix = {
@@ -26,50 +26,42 @@ source_suffix = {
 
 templates_path = ['_templates']
 exclude_patterns = []
-
+todo_include_todos = True
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'
+html_title = 'Abby Jane\'s Knowledge Base'
 html_static_path = ['_static']
 html_css_files = ["style.css"]
+html_favicon = "_static/favicon.png"
+
 
 html_theme_options = {
-    "description": "Abby Jane’s homegrown knowledge base: infra, Ghost notes, certs, and what 3 AM Abby keeps forgetting.",
-    "fixed_sidebar": True,
-    "page_width": "960px",
-    "sidebar_width": "240px",
+    # Text at the very top of the sidebar under the project name
+    "sidebar_hide_name": False,
 
-    # If you want your name at the top instead of just the project title
-    "logo_name": True,
+    # Little banner at the top of the page (nice for your tagline)
+    "announcement": "Tech, blog notes, errata, and what 3 AM Abby keeps forgetting.",
 
-    # Nice subtle header link colors
-    "link": "#c2185b",
-    "link_hover": "#7b1fa2",
+    # Keyboard nav between pages
+    "navigation_with_keys": True,
 
-    # Optional footer text
-    "show_relbars": False,
-    "logo_name": True,
+    # Brand colors (roughly your old link colors)
+    "light_css_variables": {
+        "color-brand-primary": "#c2185b",
+        "color-brand-content": "#7b1fa2",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#ff80ab",
+        "color-brand-content": "#ce93d8",
+    },
 }
 
-html_sidebars = {
-    "**": [
-        "about.html",
-        "navigation.html",
-        "searchbox.html",
-    ],
-}
 
 html_use_modindex = False
-
-html_theme_options = {
-    "description": "infra, Ghost notes, certs, and what 3 AM Abby Jane keeps forgetting.",
-    "fixed_sidebar": True,
-    "logo_name": True,
-    "show_relbars": False,
-}
 
 html_last_updated_fmt = ""
 html_show_sphinx = False

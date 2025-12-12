@@ -1,18 +1,477 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* ================================
+   Abby Jane x Furo custom styles
+   ================================ */
+
+/* ---------- 1. Global variables & typography ---------- */
+
+:root {
+  /* Font stacks */
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-stack--monospace: "Fira Code", "JetBrains Mono", ui-monospace,
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+
+  /* Base sizing */
+  --font-size--small: 0.875rem;
+  --font-size--normal: 1rem;
+  --font-size--large: 1.125rem;
+
+  /* Slightly softer page background */
+  --color-background-primary: #faf7fc;
+
+  /* Body text */
+  --color-foreground-primary: #222029;
 }
 
-div.body h1,
-div.body h2,
-div.body h3 {
+/* Dark mode tweaks */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #141019;
+    --color-foreground-primary: #f6edf9;
+  }
+}
+
+/* ---------- 2. Body & main layout ---------- */
+
+body {
+  font-family: var(--font-stack);
+  font-size: var(--font-size--normal);
+  line-height: 1.6;
+  background: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+}
+
+/* Give the content column a subtle card feel */
+.main {
+  border-radius: 12px;
+  margin: 1.5rem 0 2.5rem 0;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.03);
+}
+
+/* Make things breathe a bit more on large screens */
+@media screen and (min-width: 1200px) {
+  .content {
+    padding-top: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* ---------- 3. Sidebar styling ---------- */
+
+/* Sidebars (left nav) */
+.sidebar {
+  padding-top: 1.25rem;
+}
+
+/* Brand block at the top: “Abby Jane’s Knowledge Base” */
+.sidebar .sidebar-brand {
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Project name + tagline spacing */
+.sidebar .sidebar-brand .sidebar-brand-text {
+  margin-top: 0.15rem;
+}
+
+/* Navigation tree links */
+.sidebar .sidebar-tree li a {
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Hover state: gentle brand tint */
+.sidebar .sidebar-tree li a:hover {
+  background: rgba(194, 24, 91, 0.08);
+}
+
+/* Active / current page */
+.sidebar .sidebar-tree .current > a {
+  font-weight: 600;
+  background: rgba(194, 24, 91, 0.14);
+}
+
+/* Dark mode sidebar tuning */
+@media (prefers-color-scheme: dark) {
+  .sidebar .sidebar-tree li a:hover {
+    background: rgba(255, 128, 171, 0.09);
+  }
+
+  .sidebar .sidebar-tree .current > a {
+    background: rgba(255, 128, 171, 0.14);
+  }
+}
+
+/* ---------- 4. Announcement bar (your tagline) ---------- */
+
+.announcement {
+  font-size: 0.85rem;
+  background: #fce4ec;
+  color: #880e4f;
+  border-bottom: 2px solid #c2185b;
+  padding: 0.55rem 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .announcement {
+    background: #311024;
+    color: #ffb3d5;
+    border-bottom-color: #ff80ab;
+  }
+}
+
+/* ---------- 5. Headings & page title ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-stack);
   letter-spacing: 0.03em;
 }
 
-a {
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0.75rem;
 }
 
-a:hover {
-  text-decoration: underline;
+h2 {
+  font-size: 1.4rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Underline h2-ish sections softly */
+h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(194, 24, 91, 0.8),
+    rgba(123, 31, 162, 0.0)
+  );
+}
+
+/* ---------- 6. Links ---------- */
+
+/* Main content links */
+.main a {
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(194, 24, 91, 0.3);
+  transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+
+.main a:hover {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(123, 31, 162, 0.7);
+}
+
+/* In headings, avoid underlines */
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  border-bottom: none;
+}
+
+/* ---------- 7. “On this page” right sidebar ---------- */
+
+.toc-sticky {
+  font-size: 0.88rem;
+}
+
+.toc-sticky .toc-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.toc-sticky a {
+  border-radius: 999px;
+  padding: 0.15rem 0.35rem;
+}
+
+.toc-sticky a:hover {
+  background: rgba(194, 24, 91, 0.08);
+}
+
+/* ---------- 8. Prose: paragraphs, lists, blockquotes ---------- */
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+ul,
+ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Slightly custom bullets */
+ul li {
+  margin-bottom: 0.2rem;
+}
+
+ul li::marker {
+  color: #c2185b;
+}
+
+/* Blockquotes = Abby thinking out loud */
+blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid rgba(123, 31, 162, 0.7);
+  background: rgba(242, 232, 250, 0.7);
+  border-radius: 6px;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    background: rgba(50, 28, 68, 0.8);
+    border-left-color: rgba(206, 147, 216, 0.85);
+  }
+}
+
+/* ---------- 9. Code blocks & inline code ---------- */
+
+code,
+tt {
+  font-family: var(--font-stack--monospace);
+  font-size: 0.9em;
+}
+
+/* Inline code */
+code {
+  padding: 0.05rem 0.25rem;
+  border-radius: 4px;
+  background: rgba(123, 31, 162, 0.05);
+  border: 1px solid rgba(123, 31, 162, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  code {
+    background: rgba(255, 128, 171, 0.08);
+    border-color: rgba(255, 128, 171, 0.25);
+  }
+}
+
+/* Furo uses .highlight for code blocks */
+.highlight {
+  border-radius: 10px;
+  padding: 0;
+  background-color: #f8f5fb;
+  border: 1px solid #e0d7ee;
+  margin: 1rem 0;
+}
+
+/* Ensure long lines scroll instead of overflowing */
+.highlight pre {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+
+/* Dark mode code block */
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    background-color: #1f1526;
+    border-color: #3a2c43;
+  }
+}
+
+/* ---------- 10. Admonitions (note, warning, etc.) ---------- */
+
+.admonition {
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+}
+
+/* Title inside an admonition */
+.admonition .admonition-title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Note */
+.admonition.note {
+  border-left: 4px solid #7b1fa2;
+}
+
+/* Warning */
+.admonition.warning {
+  border-left: 4px solid #c2185b;
+}
+
+/* Tip */
+.admonition.tip {
+  border-left: 4px solid #2e7d32;
+}
+
+/* Dark mode tuning */
+@media (prefers-color-scheme: dark) {
+  .admonition.note {
+    border-left-color: #ce93d8;
+  }
+  .admonition.warning {
+    border-left-color: #ff80ab;
+  }
+  .admonition.tip {
+    border-left-color: #81c784;
+  }
+}
+
+/* ---------- 11. Tables ---------- */
+
+table.docutils {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+table.docutils th,
+table.docutils td {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.4rem 0.6rem;
+}
+
+table.docutils thead th {
+  background: rgba(194, 24, 91, 0.05);
+}
+
+/* Dark mode tables */
+@media (prefers-color-scheme: dark) {
+  table.docutils th,
+  table.docutils td {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  table.docutils thead th {
+    background: rgba(255, 128, 171, 0.08);
+  }
+}
+
+/* ---------- 12. Images ---------- */
+
+img {
+  border-radius: 8px;
+}
+
+/* Centered, reasonably sized images */
+img.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%;
+}
+
+/* ---------- 13. Small meta text ---------- */
+
+.footer,
+.rst-footer-buttons,
+.document [role="contentinfo"] {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* If Furo shows “Last updated by Sphinx” etc, keep it subtle */
+.document [role="contentinfo"] {
+  margin-top: 2rem;
+}
+
+/* ---------- 14. Little KB vibe tweak for the search box ---------- */
+
+.sidebar-search {
+  margin-top: 0.9rem;
+}
+
+.sidebar-search input[type="search"] {
+  border-radius: 999px;
+  font-size: 0.9rem;
+  padding-inline: 0.75rem;
+}
+
+
+.aj-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  opacity: 0.85;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.aj-footer a {
+  border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .aj-footer {
+    opacity: 0.75;
+    border-top-color: rgba(255,255,255,0.15);
+  }
+}
+
+/* --- Fix weird wrapping in the right-side "On this page" TOC --- */
+
+/* Let lines wrap normally (not mid-word) */
+.toc-sticky a {
+  white-space: normal;
+  overflow-wrap: normal;   /* don't force breaks anywhere */
+  word-break: normal;      /* avoid breaking words */
+  hyphens: auto;           /* if the browser can hyphenate, let it */
+  line-height: 1.25;
+}
+
+/* Reduce indentation soights so there’s more usable width */
+.toc-sticky ul {
+  padding-left: 0.75rem;
+}
+.toc-sticky ul ul {
+  padding-left: 0.9rem;
+}
+
+/* Optional: slightly smaller font for deep nests */
+.toc-sticky li li a {
+  font-size: 0.86rem;
+}
+
+/* Optional: give the right TOC a little more width on large screens */
+@media (min-width: 1100px) {
+  .toc-drawer {
+    width: 18rem;
+  }
+}
+
+/* --- Hanging indent for wrapped items in "On this page" TOC --- */
+
+.toc-sticky li {
+  padding-left: 0.9rem;   /* overall indent */
+}
+
+.toc-sticky li > a {
+  display: block;
+  padding-left: 0.9rem;   /* text indent */
+  text-indent: -0.9rem;  /* pull first line back */
 }
