@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Personal Knowledge Base'
-# copyright = '2025, cloverdale Lane'
-# author = 'Cloverdale Lane'
+project = 'Abby Jane\'s Knowledge Base'
+copyright = '2025, abby jane morton'
+author = 'abby jane morton'
 release = '1'
 
 # -- General configuration ---------------------------------------------------
@@ -33,11 +33,20 @@ todo_include_todos = True
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'furo'
-html_title = 'Personal Knowledge Base'
+html_title = 'Abby Jane\'s Knowledge Base'
 html_static_path = ['_static']
 html_css_files = ["style.css"]
 html_favicon = "_static/favicon.png"
 html_show_sourcelink = False
+
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/about.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+    ]
+}
 
 
 html_theme_options = {

@@ -475,3 +475,27 @@ img.align-center {
   padding-left: 0.9rem;   /* text indent */
   text-indent: -0.9rem;  /* pull first line back */
 }
+
+.sidebar-about {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding-left: var(--sidebar-item-spacing-horizontal);
+  padding-right: var(--sidebar-item-spacing-horizontal);
+  color: var(--color-foreground-secondary);
+}
+
+.sidebar-about-title {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-about-title a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-about-title a:hover {
+  text-decoration: underline;
+}
+
+

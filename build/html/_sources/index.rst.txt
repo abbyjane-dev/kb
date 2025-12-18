@@ -11,6 +11,6 @@ This is my homegrown knowledge base. Because I forget things easily.
    technology
    administration
 
-
-.. todo::
-   Fix footer border
+..
+   .. todo::
+        Fix footer border
