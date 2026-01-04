@@ -1,11 +1,10 @@
 About this knowledge base
 =========================
 
-This site is a structured personal knowledge base built with Sphinx.
+This is a personal knowledge base built with Sphinx.
 
-It’s designed for material that benefits from hierarchy rather than chronology:
-documentation, notes, and references that improve over time through revision and
-reorganization.
+The material here benefits from structure: hierarchy over chronology, revision over accumulation, navigation over vibes.
 
-I treat documentation as a product surface. Decisions here prioritize clarity,
-navigation, and long-term maintainability over novelty or speed.
+I treat documentation as a product. That means clear boundaries, predictable organization, and an expectation that things will be revisited, corrected, and improved over time.
+
+The documentation contained herein is incomplete, subject to change, and offered with no guarantees, much like its author.
