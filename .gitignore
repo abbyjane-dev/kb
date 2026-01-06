@@ -1,6 +1,8 @@
 # Sphinx build artifacts
 build/*/*
 _build/*/*
+build/
+_build/
 venv/*
 .vscode/*
 
