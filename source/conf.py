@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Abby Jane\'s Knowledge Base'
-copyright = '2025, abby jane morton'
-author = 'abby jane morton'
+copyright = 'Abby Jane 2025-2026'
+author = 'Abby Jane Morton'
 release = '1'
 
 # -- General configuration ---------------------------------------------------
