@@ -5,6 +5,7 @@ build/
 _build/
 venv/*
 .vscode/*
+.idea/*
 
 # LaTeX junk
 *.aux
