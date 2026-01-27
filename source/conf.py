@@ -17,6 +17,7 @@ release = '1'
 extensions = [
         "myst_parser",
         "sphinx.ext.todo",
+        "sphinx_design",
 ]
 
 source_suffix = {

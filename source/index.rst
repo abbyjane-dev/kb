@@ -4,13 +4,18 @@
 
 This is my homegrown knowledge base. Because I forget things easily.
 
-.. toctree::
-   :maxdepth: 4
-   :caption: Sections:
+Sections
 
-   technology
-   administration
+.. dropdown:: Technology
 
-..
-   .. todo::
-        Fix footer border
+   .. toctree::
+      :maxdepth: 3
+
+      technology
+
+.. dropdown:: Administration
+
+   .. toctree::
+      :maxdepth: 3
+
+      administration
