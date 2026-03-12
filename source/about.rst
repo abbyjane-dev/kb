@@ -1,7 +1,7 @@
 About this knowledge base
 =========================
 
-This is a personal knowledge base built with Sphinx.
+This is a knowledge base built with Sphinx.
 
 The material here benefits from structure: hierarchy over chronology, revision over accumulation, navigation over vibes.
 
